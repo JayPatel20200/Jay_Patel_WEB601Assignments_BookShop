@@ -2,11 +2,12 @@ import { Content } from "./content-interface";
 
 export class ContentList {
     private contentArray: Content[];
+content: any;
     constructor() {
         this.contentArray = [];
       }
     
-      getContentArray(): Content[] {
+      get ContentArray(): Content[] {
         return this.contentArray;
       }
     
