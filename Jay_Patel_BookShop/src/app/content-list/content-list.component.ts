@@ -1,16 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Content } from '../helper-files/content-interface';
 @Component({
   selector: 'app-content-list',
   standalone: true,
-  imports: [ContentListComponent],
+  imports: [],
   templateUrl: './content-list.component.html',
   styleUrl: './content-list.component.scss'
 })
 export class ContentListComponent {
   contentItem: Content[] = [
     {
-      id: 6,
+      id: 1,
       title: "Pride and Prejudice",
       description: "A novel by Jane Austen",
       creator: "Jane Austen",
@@ -65,6 +65,8 @@ export class ContentListComponent {
     }
   ];
 
+  constructor (){
+  }
   ngOnInit(): void {
   }
 }
