@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
-// import { ContentCardComponent } from '../content-card/content-card.component';
 
 @Component({
   selector: 'app-content-list',
