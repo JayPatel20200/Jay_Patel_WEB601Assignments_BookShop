@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
+// import { ContentCardComponent } from '../content-card/content-card.component';
 
 @Component({
   selector: 'app-content-list',
@@ -10,6 +11,9 @@ import { Content } from '../helper-files/content-interface';
   styleUrl: './content-list.component.scss'
 })
 export class ContentListComponent implements OnInit {
+  displayContentInfo(contentItem: Content) {
+    console.log(`ID: ${contentItem.id} and Title: ${contentItem.title}`);
+    }
   @Input () contentItems: Content[] = [];
 
   ngOnInit(): void {
