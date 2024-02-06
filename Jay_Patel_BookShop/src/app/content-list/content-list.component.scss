@@ -9,3 +9,35 @@
     padding: 15px;
     margin: 20px;
   }
+
+  h2{
+    color: yellow;
+  }
+  h2:first-of-type{
+    color: red;
+  }
+
+  h2:last-of-type{
+    color: blue;
+  }
+
+  button{
+    background-color: #73aebe;
+    padding: 5px 10px;
+    border: 0px;
+    border-radius: 10px;
+    outline: none;
+    transform: none;
+    transition: all 0.3s ease-in;
+  }
+  button:hover{
+    transform: scale(1.1);
+    background-color: #1c5eeb;
+    color: white;
+  }
+  input{
+    padding: 5px 10px;
+    outline: none;
+    margin-right: 5px;
+
+  }
