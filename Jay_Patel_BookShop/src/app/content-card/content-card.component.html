@@ -1,7 +1,7 @@
 <div class="content-card" [ngClass]="{
     'novel': contentItem.type === 'Novel',
     'Friction': contentItem.type === 'Friction',
-    'AutoBiography': contentItem.type === 'AutoBiography',
+    'AutoBiography': contentItem.type === 'A',
     'unspecified': !contentItem.type
   }">
   
@@ -13,6 +13,6 @@
           <p><strong>Description:</strong> {{ contentItem.description }}</p>
           <p><strong>Creator:</strong> {{ contentItem.creator }}</p>
           <p *ngIf="contentItem.type" appUnderLine><strong>Type: </strong>{{ contentItem.type }}</p>
-          <p *ngIf="contentItem.tags && contentItem.tags.length > 0"><strong>Tags:</strong> {{ contentItem.tags.join(', ') }}</p>
+          <p *ngIf="contentItem.tags && contentItem.tags.length  > 0"><strong>Tags:</strong> {{ contentItem.tags.join(', ') }}</p>
       
   </div>

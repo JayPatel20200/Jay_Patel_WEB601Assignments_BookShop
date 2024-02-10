@@ -4,10 +4,11 @@ import { Content } from '../helper-files/content-interface';
 import { ContentCardComponent } from '../content-card/content-card.component';
 import { TypeFilterPipe } from '../type-filter.pipe';
 import { FormsModule } from '@angular/forms';
+import { UnderLineDirective } from '../under-line.directive';
 @Component({
   selector: 'app-content-list',
   standalone: true,
-  imports: [CommonModule, ContentCardComponent, TypeFilterPipe, FormsModule],
+  imports: [CommonModule, ContentCardComponent, TypeFilterPipe, FormsModule, UnderLineDirective],
   templateUrl: './content-list.component.html',
   styleUrl: './content-list.component.scss'
 })
