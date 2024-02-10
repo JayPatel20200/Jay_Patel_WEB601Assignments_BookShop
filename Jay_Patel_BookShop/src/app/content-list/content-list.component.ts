@@ -84,6 +84,15 @@ export class ContentListComponent implements OnInit {
         imgURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/To_Kill_a_Mockingbird_%281963_US_theatrical_poster%29.jpg/800px-To_Kill_a_Mockingbird_%281963_US_theatrical_poster%29.jpg",
         type: "AutoBiography",
         tags: ["Fiction", "Classic"]
+      },
+      {
+        id: 7,
+        title: "Game Of Throne",
+        description: "A novel by George R.R Martin",
+        creator: "George R.R Martin",
+        imgURL: "",
+        type: "Novel",
+        tags: ["Fiction", "Classic"]
       }
       
     ];

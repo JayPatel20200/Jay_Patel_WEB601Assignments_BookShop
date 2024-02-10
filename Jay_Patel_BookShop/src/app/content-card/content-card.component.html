@@ -1,16 +1,18 @@
 <div class="content-card" [ngClass]="{
-    'fashion': contentItem.type === 'Fashion',
-    'mansion': contentItem.type === 'Mansion',
-    'food': contentItem.type === 'Food',
+    'novel': contentItem.type === 'Novel',
+    'Friction': contentItem.type === 'Friction',
+    'AutoBiography': contentItem.type === 'AutoBiography',
     'unspecified': !contentItem.type
   }">
   
-      <img [src]="contentItem.imgURL" *ngIf="contentItem.imgURL" alt="{{ contentItem.title }}" class="content-card-image" height="200px" width="150px">
-      <div *ngIf="contentItem.imgURL">
+      <img [src]="contentItem.imgURL" *ngIf="contentItem.imgURL; else defaultImage" alt="{{ contentItem.title }}" class="content-card-image" height="200px" width="150px">
+  <ng-template #defaultImage>
+    <img src="https://d585tldpucybw.cloudfront.net/sfimages/default-source/blogs/2023/2023-11/angular-logo-1200-628.png?sfvrsn=bf64b1ee_3" alt="this is the default image" height="200px" width="250px">
+  </ng-template>
           <h2>{{ contentItem.title }}</h2>
           <p><strong>Description:</strong> {{ contentItem.description }}</p>
           <p><strong>Creator:</strong> {{ contentItem.creator }}</p>
           <p *ngIf="contentItem.type"><strong>Type: </strong>{{ contentItem.type }}</p>
           <p *ngIf="contentItem.tags && contentItem.tags.length > 0"><strong>Tags:</strong> {{ contentItem.tags.join(', ') }}</p>
-      </div>
+      
   </div>
