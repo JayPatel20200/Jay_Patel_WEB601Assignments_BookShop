@@ -12,5 +12,4 @@ import { UnderLineDirective } from '../under-line.directive';
 })
 export class ContentCardComponent {
  @Input() contentItem : any;
- effectBold = 'bold';
 }
