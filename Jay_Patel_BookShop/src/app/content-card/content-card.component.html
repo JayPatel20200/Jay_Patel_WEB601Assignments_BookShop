@@ -14,5 +14,5 @@
           <p><strong>Creator:</strong> {{ contentItem.creator }}</p>
           <p *ngIf="contentItem.type" appUnderLine [effect]="'underline'"><strong>Type: </strong>{{ contentItem.type }}</p>
           <!-- <p *ngIf="contentItem.tags && contentItem.tags.length  > 0" appUnderLine><strong>Tags:</strong> {{ contentItem.tags.join(', ') }}</p> -->
-      <p *ngFor="let tag of contentItem.tags" appUnderLine><strong>Tags:</strong>{{ tag }}</p>
+      <strong>Tags:</strong><span *ngFor="let tag of contentItem.tags" appUnderLine>{{ tag }}, </span>
   </div>
