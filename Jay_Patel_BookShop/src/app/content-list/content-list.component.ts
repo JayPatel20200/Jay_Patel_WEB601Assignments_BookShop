@@ -5,10 +5,11 @@ import { ContentCardComponent } from '../content-card/content-card.component';
 import { TypeFilterPipe } from '../type-filter.pipe';
 import { FormsModule } from '@angular/forms';
 import { UnderLineDirective } from '../under-line.directive';
+import { CreateContentComponent } from '../create-content/create-content.component';
 @Component({
   selector: 'app-content-list',
   standalone: true,
-  imports: [CommonModule, ContentCardComponent, TypeFilterPipe, FormsModule, UnderLineDirective],
+  imports: [CommonModule, ContentCardComponent, TypeFilterPipe, FormsModule, UnderLineDirective, CreateContentComponent],
   templateUrl: './content-list.component.html',
   styleUrl: './content-list.component.scss'
 })
@@ -98,5 +99,7 @@ export class ContentListComponent implements OnInit {
       
     ];
   }
- 
+  onContentCreated(newContent: any) {
+    this.contentItems.push({ ...newContent }); // Clone the content
+  }
 }
