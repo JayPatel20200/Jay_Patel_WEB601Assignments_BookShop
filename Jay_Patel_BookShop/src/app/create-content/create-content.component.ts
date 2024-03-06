@@ -36,15 +36,13 @@ export class CreateContentComponent {
     // Simulate asynchronous content creation
     const promise = new Promise<void>((resolve, reject) => {
       // Simulate success
-      if (Math.random() < 0.8) {
+
         this.createContent.emit({ ...this.content }); // Clone the content
         console.log(`Content added successfully: ${this.content.title}`);
-        this.content = { id: 0, title: '', description: '', creator: '', imgUrl: '', type: '', tags: [] }; // Clear input fields
+        this.content = { id: 0, title: '', description: '', creator: '', imgUrl: '', type: '', tags: [] }; 
         resolve();
-      } else {
-        // Simulate failure
         reject('Failed to add content. Please try again.');
-      }
+      
     });
 
     // Handle promise resolution/rejection
