@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { UnderLineDirective } from '../under-line.directive';
 import { BookServiceService } from '../services/book-service.service';
 import { Observable } from 'rxjs';
+import { MessageService } from '../services/message.service';
 @Component({
   selector: 'app-content-list',
   standalone: true,
@@ -27,7 +28,7 @@ export class ContentListComponent implements OnInit {
   message: string = '';  
   selectedTitle: string | null = null;
   id:any;
-
+  selectedContent?: Content;
   checkContentExists() {
     const foundItem = this.contentItems.find(item => item.title.toLowerCase() === this.searchTitle.toLowerCase());
     this.contentExists = !!foundItem;
@@ -40,11 +41,16 @@ export class ContentListComponent implements OnInit {
   }
   
 
-  constructor (private BookService:BookServiceService){ }
+  constructor (private BookService:BookServiceService, private MessageService: MessageService){ }
   ngOnInit() {
     this.BookService.getContentObs().subscribe(content => this.contentItems = content);
     this.BookService.getContentById(3).subscribe(content=> this.items = content);
     console.log(this.items);
+  }
+  onSelect(content: Content):void{
+    this.selectedContent = content;
+    this.MessageService.add(`Content itme at ${content.id}`);
+    console.log("clicked");
   }
  
 }
