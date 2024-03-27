@@ -7,9 +7,13 @@
 <app-content-card [contentItem]="items"></app-content-card>
 
 
-
+<div>
+    <div *ngFor="let content of contentItems">
+      <app-content-card [contentItem]="content"></app-content-card>
+    </div>
+  </div>
 <!-- Display search result message -->
-<p [ngStyle]="{'color': contentExists ? 'green' : 'red'}">{{ message }}</p>
+<!-- <p [ngStyle]="{'color': contentExists ? 'green' : 'red'}">{{ message }}</p>
 <h1>Empty</h1>
 <app-content-card *ngFor="let contentItem of contentItems | typeFilter: ' '" [contentItem]="contentItem"></app-content-card>
 
@@ -20,4 +24,4 @@
 <app-content-card *ngFor="let contentItem of contentItems | typeFilter: 'Friction'" [contentItem]="contentItem"></app-content-card>
 
 <h2>AutoBiography</h2>
-<app-content-card *ngFor="let contentItem of contentItems | typeFilter: 'AutoBiography'" [contentItem]="contentItem"></app-content-card>
+<app-content-card *ngFor="let contentItem of contentItems | typeFilter: 'AutoBiography'" [contentItem]="contentItem"></app-content-card> -->
