@@ -8,10 +8,11 @@ import { UnderLineDirective } from '../under-line.directive';
 import { BookServiceService } from '../services/book-service.service';
 import { Observable } from 'rxjs';
 import { MessageService } from '../services/message.service';
+import { ModifyContentComponent } from '../modify-content/modify-content.component';
 @Component({
   selector: 'app-content-list',
   standalone: true,
-  imports: [CommonModule, ContentCardComponent, TypeFilterPipe, FormsModule, UnderLineDirective],
+  imports: [CommonModule, ContentCardComponent, TypeFilterPipe, FormsModule, UnderLineDirective, ModifyContentComponent],
   templateUrl: './content-list.component.html',
   styleUrl: './content-list.component.scss'
 })
@@ -47,10 +48,28 @@ export class ContentListComponent implements OnInit {
     this.BookService.getContentById(3).subscribe(content=> this.items = content);
     console.log(this.items);
   }
+  addContentToList(newContentItem: Content): void {
+    this.BookService.addContent(newContentItem)
+    .subscribe(newContentFromServer =>
+    this.contentItems.push(newContentFromServer)
+    );
+    }
+
+    updateContentInList(contentItem: Content): void {
+      this.BookService.updateContent(contentItem)
+      .subscribe(() =>
+      console.log("Content updated successfully")
+      );
+      }
   onSelect(content: Content):void{
     this.selectedContent = content;
     this.MessageService.add(`Content itme at ${content.id}`);
     console.log("clicked");
+  }
+  
+  onContentAdded(newContent: Content): void {
+    this.contentItems = [...this.contentItems, newContent];
+    this.MessageService.add('Content added successfully');
   }
  
 }

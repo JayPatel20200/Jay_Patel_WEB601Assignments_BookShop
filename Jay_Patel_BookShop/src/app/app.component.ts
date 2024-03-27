@@ -9,7 +9,12 @@ import { InMemoryDataService } from './services/in-memory-data.service';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, ContentListComponent, MessageComponent, HttpClientInMemoryWebApiModule, HttpClientModule],
+  imports: [CommonModule,
+      RouterOutlet,
+      ContentListComponent,
+      MessageComponent,
+      HttpClientModule, 
+    HttpClientInMemoryWebApiModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
